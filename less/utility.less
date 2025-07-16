@@ -1,0 +1,62 @@
+// Variables
+@desktop: ~"(min-width: 61rem)";
+@primaryColor: {
+  purple50: hsl(260, 100%, 95%);
+  purple300: hsl(264, 82%, 80%);
+  purple500: hsl(263, 55%, 52%);
+};
+
+@neutralColor: {
+  white: hsl(0, 0%, 100%);
+  grey100: hsl(214, 17%, 92%);
+  grey200: hsl(0, 0%, 81%);
+  grey400: hsl(224, 10%, 45%);
+  grey500: hsl(217, 19%, 35%);
+  dark-blue: hsl(219, 29%, 14%);
+  black: hsl(0, 0%, 7%);
+};
+// Class Styles (used as placeholder styles
+.border-extend {
+  .border(2px, solid, @primaryColor[purple300]);
+}
+
+.grey-text-extend {
+  color: @neutralColor[grey100];
+}
+
+.white-article {
+  background-color: @neutralColor[white];
+  color: @neutralColor[grey500];
+}
+
+// Mixins
+.font-face-mixin(@fileName, @weight, @baseURL: "../fonts") {
+  font-family: "Barlow Semi Condensed";
+  src: url("@{baseURL}/@{fileName}") format("truetype");
+  font-weight: @weight;
+}
+
+.border-radius-all(@radius) {
+  border-start-start-radius: @radius;
+  border-start-end-radius: @radius;
+  border-end-start-radius: @radius;
+  border-end-end-radius: @radius;
+}
+
+.box-shadow(@x,@y,@blur,@color, @alpha) {
+  box-shadow+: @x @y @blur hsl(hue(@color) saturation(@color) lightness(@color) / @alpha);
+}
+
+.box-shadow(@x,@y,@blur,@spread,@color,@alpha) {
+  box-shadow+: @x @y @blur @spread hsl(hue(@color) saturation(@color) lightness(@color) / @alpha);
+}
+
+.border(@size,@type,@color) {
+  border-inline: @size @type @color;
+  border-block: @size @type @color;
+}
+
+.size(@size) {
+  inline-size: @size;
+  block-size: @size;
+}

@@ -1,0 +1,63 @@
+@import "global.less";
+
+main {
+  div p {
+    margin-block-start: 0.250em;
+    font-size: 0.8125em;
+  }
+
+  header ~ p {
+    line-height: 1.5;
+    font-size: clamp(0.8125em, calc(0.8125em + 0.5vw), 0.8125em);
+  }
+
+  article:first-child {
+    &:extend(.grey-text-extend);
+    background-color: @primaryColor[purple500];
+    grid-area: daniel;
+    @media @desktop {
+      background: @primaryColor[purple500] url("../images/bg-pattern-quotation.svg") no-repeat top right 19% / 152px;
+    }
+
+    img {
+      &:extend(.border-extend);
+    }
+  }
+
+  article:nth-child(n + 2) {
+    margin-block-start: clamp(2em, 5vw, 3em);
+    @media @desktop {
+      margin-block-start: 0;
+    }
+  }
+
+  article:nth-child(2) {
+    background-color: @neutralColor[grey500];
+    &:extend(.grey-text-extend);
+    grid-area: jonathan;
+
+    div p {
+      color: @neutralColor[grey200];
+    }
+  }
+
+  article:nth-child(3) {
+    &:extend(.white-article);
+    grid-area: jeanette;
+  }
+
+  article:nth-child(4) {
+    background-color: @neutralColor[dark-blue];
+    color: @neutralColor[grey200];
+    grid-area: patrick;
+  }
+
+  article:nth-child(5) {
+    &:extend(.white-article);
+    grid-area: kira;
+
+    div p {
+      color: @neutralColor[grey400];
+    }
+  }
+}

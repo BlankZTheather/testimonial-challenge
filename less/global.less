@@ -1,0 +1,76 @@
+@import (reference) "utility.less";
+
+@font-face {
+  .font-face-mixin("BarlowSemiCondensed-Regular.ttf", 500);
+}
+
+@font-face {
+  .font-face-mixin("BarlowSemiCondensed-SemiBold.ttf", 600);
+}
+
+html {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-block-size: 100vh;
+  background-color: @neutralColor[grey100];
+}
+
+main {
+  margin-block: clamp(4em, 10vw, 8em);
+  @media @desktop {
+    display: grid;
+    grid-template-areas:
+            "daniel daniel jonathan kira"
+            "jeanette patrick patrick kira";
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-inline-size: 1110px;
+  }
+}
+
+article {
+  inline-size: clamp(16.875em, calc(1em + 60vw), 30em);
+  padding-inline: clamp(2em, 4vw, 2.5em);
+  padding-block: clamp(2em, 4vw, 2.5em);
+  .border-radius-all(8px);
+  .box-shadow(8px, 10px, 28px, @neutralColor[black], 0.15);
+  .box-shadow(16px, 15px, 36px, @neutralColor[black], 0.08);
+  .box-shadow(24px, 20px, 48px, @neutralColor[black], 0.04);
+  @media @desktop {
+    inline-size: auto;
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  .size(2em);
+  .border-radius-all(40px);
+}
+
+div {
+  margin-inline-start: 1em;
+}
+
+h2 {
+  font-size: 1.125em;
+  margin-block-end: 0;
+}
+
+h1 {
+  font-size: clamp(1.25em, calc(1.25em + 0.5vw), 1.25em);
+  font-weight: 600;
+  margin-block-start: clamp(0.75em, 2vw, 1.25em);
+  margin-block-end: clamp(1em, 2vw, 1.5em);
+  line-height: 1.2;
+}

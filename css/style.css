@@ -1,0 +1,133 @@
+main article:first-child img {
+  border-inline: 2px solid hsl(264, 82%, 80%);border-block: 2px solid hsl(264, 82%, 80%);
+}
+main article:first-child,
+main article:nth-child(2) {
+  color: hsl(214, 17%, 92%);
+}
+main article:nth-child(3),
+main article:nth-child(5) {
+  background-color: hsl(0, 0%, 100%);color: hsl(217, 19%, 35%);
+}
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../fonts/BarlowSemiCondensed-Regular.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url("../fonts/BarlowSemiCondensed-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+html {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-block-size: 100vh;
+  background-color: hsl(214, 17%, 92%);
+}
+main {
+  margin-block: clamp(4em, 10vw, 8em);
+}
+@media (min-width: 61rem) {
+  main {
+    display: grid;
+    grid-template-areas: "daniel daniel jonathan kira" "jeanette patrick patrick kira";
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-inline-size: 1110px;
+  }
+}
+article {
+  inline-size: clamp(16.875em, calc(1em + 60vw), 30em);
+  padding-inline: clamp(2em, 4vw, 2.5em);
+  padding-block: clamp(2em, 4vw, 2.5em);
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  box-shadow: 8px 10px 28px hsla(0, 0%, 7%, 0.15), 16px 15px 36px hsla(0, 0%, 7%, 0.08), 24px 20px 48px hsla(0, 0%, 7%, 0.04);
+}
+@media (min-width: 61rem) {
+  article {
+    inline-size: auto;
+  }
+}
+header {
+  display: flex;
+  align-items: center;
+}
+img {
+  inline-size: 2em;
+  block-size: 2em;
+  border-start-start-radius: 40px;
+  border-start-end-radius: 40px;
+  border-end-start-radius: 40px;
+  border-end-end-radius: 40px;
+}
+div {
+  margin-inline-start: 1em;
+}
+h2 {
+  font-size: 1.125em;
+  margin-block-end: 0;
+}
+h1 {
+  font-size: clamp(1.25em, calc(1.25em + 0.5vw), 1.25em);
+  font-weight: 600;
+  margin-block-start: clamp(0.75em, 2vw, 1.25em);
+  margin-block-end: clamp(1em, 2vw, 1.5em);
+  line-height: 1.2;
+}
+main div p {
+  margin-block-start: 0.25em;
+  font-size: 0.8125em;
+}
+main header ~ p {
+  line-height: 1.5;
+  font-size: clamp(0.8125em, calc(0.8125em + 0.5vw), 0.8125em);
+}
+main article:first-child {
+  background-color: hsl(263, 55%, 52%);
+  grid-area: daniel;
+}
+@media (min-width: 61rem) {
+  main article:first-child {
+    background: hsl(263, 55%, 52%) url("../images/bg-pattern-quotation.svg") no-repeat top right 19% / 152px;
+  }
+}
+main article:nth-child(n + 2) {
+  margin-block-start: clamp(2em, 5vw, 3em);
+}
+@media (min-width: 61rem) {
+  main article:nth-child(n + 2) {
+    margin-block-start: 0;
+  }
+}
+main article:nth-child(2) {
+  background-color: hsl(217, 19%, 35%);
+  grid-area: jonathan;
+}
+main article:nth-child(2) div p {
+  color: hsl(0, 0%, 81%);
+}
+main article:nth-child(3) {
+  grid-area: jeanette;
+}
+main article:nth-child(4) {
+  background-color: hsl(219, 29%, 14%);
+  color: hsl(0, 0%, 81%);
+  grid-area: patrick;
+}
+main article:nth-child(5) {
+  grid-area: kira;
+}
+main article:nth-child(5) div p {
+  color: hsl(224, 10%, 45%);
+}
+/*# sourceMappingURL=style.css.map */

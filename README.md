@@ -25,5 +25,5 @@ Users should be able to:
 | ![My Solution](./mysolution.jpg) | ![Goal](./goal.jpg) |
 
 ### Links
-
+- [Submission Page](https://www.frontendmentor.io/solutions/testimonial-challenge-using-less-FpFGqnSKgB)
 - [Live Site](https://blankztheather.github.io/testimonial-challenge)
